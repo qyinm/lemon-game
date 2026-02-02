@@ -1,6 +1,6 @@
 {
-  "name": "wxt-react-starter",
-  "description": "manifest.json description",
+  "name": "lemon-game",
+  "description": "A puzzle game where you drag lemons to make sums of 10",
   "private": true,
   "version": "0.0.0",
   "type": "module",
