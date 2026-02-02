@@ -54,7 +54,7 @@ export function useGameState() {
   // 선택 확정 (합 10 체크 및 제거)
   const confirmSelection = useCallback(() => {
     setGameState(prev => {
-      const { success, newBoard, score } = tryRemoveLemons(prev.board, prev.selectedLemons);
+      const { success, newBoard, removedCount } = tryRemoveLemons(prev.board, prev.selectedLemons);
 
       if (!success) {
         // 선택 해제만
@@ -67,7 +67,7 @@ export function useGameState() {
         };
       }
 
-      const newScore = prev.score + score;
+      const newScore = prev.score + (removedCount * 10);
       const isGameOver = checkGameOver(newBoard, prev.gameMode, prev.timeRemaining);
 
       // 최고 점수 업데이트
