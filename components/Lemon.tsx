@@ -47,7 +47,13 @@ const Lemon: React.FC<LemonProps> = ({ value, isSelected, isRemoved }) => {
     <div style={containerStyle}>
       {!isRemoved && (
         <>
-          <img src="/assets/lemon.png" alt="lemon" style={imageStyle} />
+          <img
+            src="/assets/lemon.png"
+            alt="lemon"
+            style={imageStyle}
+            draggable={false}
+            onDragStart={(e) => e.preventDefault()}
+          />
           <span style={numberStyle}>{value}</span>
         </>
       )}
