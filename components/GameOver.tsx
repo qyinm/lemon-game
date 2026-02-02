@@ -15,7 +15,7 @@ const GameOver: React.FC<GameOverProps> = ({ finalScore, bestScore, onRestart })
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'rgba(0, 0, 0, 0.7)',
+    background: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,42 +24,42 @@ const GameOver: React.FC<GameOverProps> = ({ finalScore, bestScore, onRestart })
   };
 
   const modalStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #fff9c4 0%, #fff59d 100%)',
-    borderRadius: '16px',
+    background: '#FFFFFF',
+    borderRadius: '12px',
     padding: '32px 40px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.1)',
     textAlign: 'center',
     maxWidth: '320px',
     width: '90%',
-    border: '3px solid #ffd54f',
+    border: '1px solid #E0E0E0',
     animation: 'slideIn 0.4s ease',
   };
 
   const titleStyle: React.CSSProperties = {
     fontSize: '32px',
     fontWeight: 'bold',
-    color: '#2d5016',
+    color: '#333333',
     marginBottom: '8px',
   };
 
   const subtitleStyle: React.CSSProperties = {
     fontSize: '16px',
-    color: '#5d4037',
+    color: '#666666',
     marginBottom: '24px',
   };
 
   const scoreContainerStyle: React.CSSProperties = {
-    background: 'rgba(255, 255, 255, 0.6)',
-    borderRadius: '12px',
+    background: '#F5F5F5',
+    borderRadius: '8px',
     padding: '20px',
     marginBottom: '24px',
-    border: '2px solid #ffd54f',
+    border: '1px solid #E0E0E0',
   };
 
   const scoreLabelStyle: React.CSSProperties = {
     fontSize: '14px',
     fontWeight: '600',
-    color: '#5d4037',
+    color: '#999999',
     textTransform: 'uppercase',
     letterSpacing: '0.5px',
     marginBottom: '8px',
@@ -68,40 +68,40 @@ const GameOver: React.FC<GameOverProps> = ({ finalScore, bestScore, onRestart })
   const scoreValueStyle: React.CSSProperties = {
     fontSize: '48px',
     fontWeight: 'bold',
-    color: isNewBest ? '#4CAF50' : '#2d5016',
+    color: isNewBest ? '#FFE135' : '#333333',
     marginBottom: '16px',
   };
 
   const bestScoreStyle: React.CSSProperties = {
     fontSize: '14px',
-    color: '#5d4037',
+    color: '#666666',
     fontWeight: '500',
   };
 
   const newBestBadgeStyle: React.CSSProperties = {
     display: 'inline-block',
-    background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)',
-    color: 'white',
+    background: '#FFE135',
+    color: '#333333',
     padding: '6px 16px',
     borderRadius: '20px',
     fontSize: '12px',
     fontWeight: 'bold',
     marginTop: '12px',
-    boxShadow: '0 2px 8px rgba(76, 175, 80, 0.3)',
+    boxShadow: 'none',
     animation: 'bounce 0.6s ease',
   };
 
   const buttonStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)',
-    color: 'white',
+    background: '#FFE135',
+    color: '#333333',
     border: 'none',
     padding: '14px 32px',
     fontSize: '16px',
-    fontWeight: 'bold',
-    borderRadius: '12px',
+    fontWeight: '600',
+    borderRadius: '8px',
     cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-    transition: 'all 0.3s ease',
+    boxShadow: 'none',
+    transition: 'all 0.2s ease',
     width: '100%',
   };
 
@@ -145,12 +145,10 @@ const GameOver: React.FC<GameOverProps> = ({ finalScore, bestScore, onRestart })
             style={buttonStyle}
             onClick={onRestart}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)';
+              e.currentTarget.style.background = '#FFF44F';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+              e.currentTarget.style.background = '#FFE135';
             }}
           >
             Play Again

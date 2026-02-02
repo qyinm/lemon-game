@@ -19,14 +19,14 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ onModeSelect }) => {
   const titleStyle: React.CSSProperties = {
     fontSize: '28px',
     fontWeight: 'bold',
-    color: '#2d5016',
+    color: '#333333',
     marginBottom: '8px',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+    textShadow: 'none',
   };
 
   const subtitleStyle: React.CSSProperties = {
     fontSize: '14px',
-    color: '#5d4037',
+    color: '#666666',
     marginBottom: '16px',
   };
 
@@ -41,26 +41,24 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ onModeSelect }) => {
   const buttonBaseStyle: React.CSSProperties = {
     padding: '16px 24px',
     fontSize: '16px',
-    fontWeight: 'bold',
-    borderRadius: '12px',
-    border: 'none',
+    fontWeight: '600',
+    borderRadius: '8px',
+    border: '2px solid #FFE135',
     cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+    transition: 'all 0.2s ease',
+    boxShadow: 'none',
     position: 'relative',
     overflow: 'hidden',
+    background: '#FFFFFF',
+    color: '#333333',
   };
 
   const infiniteButtonStyle: React.CSSProperties = {
     ...buttonBaseStyle,
-    background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)',
-    color: 'white',
   };
 
   const timerButtonStyle: React.CSSProperties = {
     ...buttonBaseStyle,
-    background: 'linear-gradient(135deg, #FF9800 0%, #FFB74D 100%)',
-    color: 'white',
   };
 
   const modeDescStyle: React.CSSProperties = {
@@ -82,12 +80,12 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ onModeSelect }) => {
           style={infiniteButtonStyle}
           onClick={() => onModeSelect('infinite')}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)';
+            e.currentTarget.style.background = '#FFE135';
+            e.currentTarget.style.borderColor = '#FFF44F';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            e.currentTarget.style.background = '#FFFFFF';
+            e.currentTarget.style.borderColor = '#FFE135';
           }}
         >
           <div>Infinite Mode</div>
@@ -98,12 +96,12 @@ const ModeSelector: React.FC<ModeSelectorProps> = ({ onModeSelect }) => {
           style={timerButtonStyle}
           onClick={() => onModeSelect('timer')}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.2)';
+            e.currentTarget.style.background = '#FFE135';
+            e.currentTarget.style.borderColor = '#FFF44F';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            e.currentTarget.style.background = '#FFFFFF';
+            e.currentTarget.style.borderColor = '#FFE135';
           }}
         >
           <div>Timer Mode</div>

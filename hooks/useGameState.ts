@@ -109,6 +109,15 @@ export function useGameState() {
     startGame(gameState.gameMode);
   }, [startGame, gameState.gameMode]);
 
+  // 메뉴로 돌아가기
+  const goToMenu = useCallback(() => {
+    setGameState(prev => ({
+      ...prev,
+      isPlaying: false,
+      isGameOver: false,
+    }));
+  }, []);
+
   return {
     gameState,
     startGame,
@@ -116,5 +125,6 @@ export function useGameState() {
     confirmSelection,
     tick,
     restartGame,
+    goToMenu,
   };
 }

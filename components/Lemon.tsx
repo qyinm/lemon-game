@@ -16,17 +16,17 @@ const Lemon: React.FC<LemonProps> = ({ value, isSelected, isRemoved }) => {
     cursor: isRemoved ? 'default' : 'pointer',
     transition: 'all 0.2s ease',
     opacity: isRemoved ? 0 : 1,
-    transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+    transform: isSelected ? 'scale(1.05)' : 'scale(1)',
     userSelect: 'none',
     position: 'relative',
-    filter: isSelected ? 'drop-shadow(0 0 8px rgba(76, 175, 80, 0.8))' : 'none',
+    filter: 'none',
   };
 
   const imageStyle: React.CSSProperties = {
     width: '100%',
     height: '100%',
     objectFit: 'contain',
-    border: isSelected ? '3px solid #4CAF50' : 'none',
+    border: isSelected ? '2px solid #FFE135' : 'none',
     borderRadius: '50%',
     boxSizing: 'border-box',
   };
@@ -38,7 +38,7 @@ const Lemon: React.FC<LemonProps> = ({ value, isSelected, isRemoved }) => {
     transform: 'translate(-50%, -50%)',
     fontSize: '16px',
     fontWeight: 'bold',
-    color: '#2d5016',
+    color: '#333333',
     textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)',
     zIndex: 1,
   };

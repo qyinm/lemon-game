@@ -18,15 +18,11 @@ const Timer: React.FC<TimerProps> = ({ timeRemaining }) => {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '12px 20px',
-    background: isLowTime
-      ? 'linear-gradient(135deg, #ffccbc 0%, #ff8a65 100%)'
-      : 'linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%)',
+    background: '#FFFFFF',
     borderRadius: '8px',
-    boxShadow: isLowTime
-      ? '0 2px 8px rgba(244, 67, 54, 0.3), 0 0 20px rgba(244, 67, 54, 0.2)'
-      : '0 2px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: 'none',
     marginBottom: '16px',
-    border: isLowTime ? '2px solid #f44336' : '2px solid #81d4fa',
+    border: isLowTime ? '2px solid #FF6B6B' : '1px solid #E0E0E0',
     transition: 'all 0.3s ease',
     animation: isLowTime ? 'pulse 1s infinite' : 'none',
   };
@@ -34,7 +30,7 @@ const Timer: React.FC<TimerProps> = ({ timeRemaining }) => {
   const labelStyle: React.CSSProperties = {
     fontSize: '11px',
     fontWeight: '600',
-    color: isLowTime ? '#b71c1c' : '#01579b',
+    color: isLowTime ? '#FF6B6B' : '#999999',
     textTransform: 'uppercase',
     letterSpacing: '0.5px',
     marginBottom: '4px',
@@ -43,7 +39,7 @@ const Timer: React.FC<TimerProps> = ({ timeRemaining }) => {
   const timeStyle: React.CSSProperties = {
     fontSize: '28px',
     fontWeight: 'bold',
-    color: isLowTime ? '#d32f2f' : '#0277bd',
+    color: isLowTime ? '#FF6B6B' : '#333333',
     fontFamily: 'monospace',
     letterSpacing: '2px',
   };

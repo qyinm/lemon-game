@@ -3,12 +3,10 @@ import './App.css';
 import ModeSelector from '../../components/ModeSelector';
 import GameBoard from '../../components/GameBoard';
 import ScoreDisplay from '../../components/ScoreDisplay';
-import Timer from '../../components/Timer';
 import GameOver from '../../components/GameOver';
 import { useGameState } from '../../hooks/useGameState';
 import { useTimer } from '../../hooks/useTimer';
 import { GameMode } from '../../types/game';
-import { calculateSum } from '../../utils/boardUtils';
 
 function App() {
   const {
@@ -18,6 +16,7 @@ function App() {
     confirmSelection,
     tick,
     restartGame,
+    goToMenu,
   } = useGameState();
 
   // 타이머 - 타이머 모드에서만 동작
@@ -26,9 +25,6 @@ function App() {
     onTick: tick,
     interval: 1000
   });
-
-  // 현재 선택된 레몬들의 합계
-  const currentSum = calculateSum(gameState.selectedLemons);
 
   // 모드 선택 핸들러
   const handleModeSelect = useCallback((mode: 'infinite' | 'timer') => {
@@ -60,14 +56,28 @@ function App() {
       ) : (
         <>
           <div className="game-header">
-            <ScoreDisplay
-              currentScore={gameState.score}
-              bestScore={gameState.highScore}
-              currentSum={currentSum}
-            />
-            {gameState.gameMode === 'timer' && (
-              <Timer timeRemaining={gameState.timeRemaining} />
-            )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                onClick={goToMenu}
+                style={{
+                  background: 'none',
+                  border: '1px solid #E0E0E0',
+                  borderRadius: '6px',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  padding: '6px 10px',
+                  color: '#666',
+                }}
+              >
+                ←
+              </button>
+              <ScoreDisplay
+                currentScore={gameState.score}
+                bestScore={gameState.highScore}
+                timeRemaining={gameState.timeRemaining}
+                gameMode={gameState.gameMode}
+              />
+            </div>
           </div>
           <div className="game-content">
             <GameBoard
